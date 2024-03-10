@@ -1,0 +1,24 @@
+{
+    "name": "SimpleMelodyBuzzer",
+    "version": "1.0.0",
+    "description": "Simple library for playing melodies using passive buzzers",
+    "keywords": "arduino, simple, passive, buzzer, melody",
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/zaragozamartin91/arduino-melody-buzzer"
+    },
+    "authors":
+    [
+      {
+        "name": "Martin Zaragoza",
+        "email": "zaragozamartin91@gmail.com",
+        "url": "https://github.com/zaragozamartin91"
+      }
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/zaragozamartin91/arduino-melody-buzzer",
+    "dependencies": {},
+    "frameworks": "*",
+    "platforms": "*"
+  }
