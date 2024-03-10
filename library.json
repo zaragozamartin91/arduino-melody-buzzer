@@ -1,6 +1,6 @@
 {
     "name": "SimpleMelodyBuzzer",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Simple library for playing melodies using passive buzzers",
     "keywords": "arduino, simple, passive, buzzer, melody",
     "repository":
