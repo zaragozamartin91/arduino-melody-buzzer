@@ -23,6 +23,10 @@ namespace mz
             bool freshTone; // keeps track of callback invocation
 
 
+            void invokeToneEndCallback();
+            void invokeDisableTone();
+
+
         public:
             MelodyBuzzer(
                 int buzzerPin, 
@@ -39,6 +43,9 @@ namespace mz
 
             // to be called on every loop cycle
             void update();
+
+            // stops the tune
+            void stop();
     };
 } // namespace mz
 

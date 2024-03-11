@@ -1,5 +1,18 @@
 #include "MelodyBuzzer.h"
 
+// PRIVATE ************************************************************************************************************
+
+void mz::MelodyBuzzer::invokeToneEndCallback() {
+    if (this->toneEndCallback != nullptr) { this->toneEndCallback(frequency , startTime, endTime, currentTime); }
+}
+
+void mz::MelodyBuzzer::invokeDisableTone() {
+    if (this->disableTone != nullptr) { this->disableTone(buzzerPin); }
+}
+
+
+// PUBLIC ************************************************************************************************************
+
 mz::MelodyBuzzer::MelodyBuzzer(
     int buzzerPin,
     void (*emitTone)(uint8_t _pin, unsigned int frequency, unsigned long duration),
@@ -44,7 +57,14 @@ void mz::MelodyBuzzer::update() {
     this->currentTime = this->getTimeMillis();
     bool toneFinished = this->freshTone && !this->playingTone();
 
-    if (toneFinished && this->disableTone != nullptr) { this->disableTone(buzzerPin); }
-    if (toneFinished && this->toneEndCallback != nullptr) { this->toneEndCallback(this->frequency , startTime, endTime, currentTime); }
-    if (toneFinished) { this->freshTone = false; }
+    if(toneFinished) {
+        this->invokeDisableTone();
+        this->invokeToneEndCallback();
+        this->freshTone = false;
+    }
+}
+
+void mz::MelodyBuzzer::stop() {
+    this->invokeDisableTone();
+    endTime = currentTime;
 }
