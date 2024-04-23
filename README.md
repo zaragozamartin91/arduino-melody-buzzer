@@ -1,4 +1,7 @@
 # arduino-melody-buzzer
+
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/zaragozamartin91/library/SimpleMelodyBuzzer.svg)](https://registry.platformio.org/libraries/zaragozamartin91/SimpleMelodyBuzzer)
+
 Simple library for playing tunes and notes on Arduino boards using passive buzzers 
 
 The tune is played asynchronously and allows for callbacks to do steps on tunes.
